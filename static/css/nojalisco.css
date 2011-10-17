@@ -36,7 +36,7 @@ div#content-wrapper {
 }
 
 div#content {
-    /* background: url('/static/img/seattle.jpg'); */
+    background: url('/static/img/seattle.jpg');
     border-top: 1px solid #999999;
     border-left: 1px solid #999999;
     border-right: 1px solid #000000;
