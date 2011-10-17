@@ -1,14 +1,23 @@
 import os
+from datetime import date
 from random import randint
 from google.appengine.ext.webapp import template
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 
-LOCATIONS = ['Taqueria Jalisco', 'CJ\'s Eatery', 'Rice \'n Spice', 'Barracuda Taqueria', 'Local 360', 'The Lucky Diner', 'Boat Street Cafe', 'The 5 Point Cafe', 'Buckley\'s in Belltown', 'Sushi Wave', 'Sushi Mori', 'Belltown Pub', 'Golden Singha Thai Cuisine', 'Uptown China Restaurant', 'Mama\'s Mexican Kitchen', 'Taco Del Mar']
+#LOCATIONS = ['Taqueria Jalisco', 'CJ\'s Eatery', 'Rice \'n Spice', 'Barracuda Taqueria', 'Local 360', 'The Lucky Diner', 'Boat Street Cafe', 'The 5 Point Cafe', 'Buckley\'s in Belltown', 'Sushi Wave', 'Sushi Mori', 'Belltown Pub', 'Golden Singha Thai Cuisine', 'Uptown China Restaurant', 'Mama\'s Mexican Kitchen', 'Taco Del Mar']
+
+LOCATIONS = ['Taqueria Jalisco (J/K)', 'CJ\'s Eatery', 'Rice \'n Spice', 'Local 360', 'The Lucky Diner', 'The 5 Point Cafe', 'Buckley\'s in Belltown', 'Sushi Wave', 'Sushi Mori', 'Belltown Pub', 'Golden Singha Thai Cuisine', 'Mama\'s Mexican Kitchen', 'Taco Del Mar']
 
 def make_decision():
     # randint = a >= x <= b
-    return LOCATIONS[randint(0, len(LOCATIONS)-1)]
+    potential = LOCATIONS[randint(0, len(LOCATIONS)-1)]
+
+    # only display Buckley's if it's Friday
+    if 'Buckley\'s' in potential and date.today().isoweekday() != 5:
+        return make_decision()
+
+    return potential
 
 class MainPage(webapp.RequestHandler):
     def get(self):
