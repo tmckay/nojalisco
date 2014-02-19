@@ -19,6 +19,9 @@ ALL_DAYS = [x for x in range(8) if x != 0]
 #LOCATIONS = ['Taqueria Jalisco (J/K)', 'CJ\'s Eatery', 'Rice \'n Spice', 'Local 360', 'The Lucky Diner', 'The 5 Point Cafe', 'Buckley\'s in Belltown', 'Sushi Wave', 'Sushi Mori', 'Belltown Pub', 'Golden Singha Thai Cuisine', 'Mama\'s Mexican Kitchen', 'Taco Del Mar']
 
 LOCATIONS = {
+    'Taqueria Jalisco (J/K)': {
+        'availability': ALL_DAYS
+    },
     'Buckley\'s': {
         'availability': (FRIDAY,)
     },
