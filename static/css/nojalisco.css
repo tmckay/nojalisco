@@ -58,10 +58,13 @@ div#button-wrapper {
 
 div#restaurant-wrapper {
     color: #ffffff;
-    font-size: 5em;
-    padding-top: 60px;
+    font-size: 2em;
     text-align: center;
     text-shadow: 0.1em 0.1em 0.2em black;
+}
+
+div#restaurant-wrapper p {
+    background-color: black;
 }
 
 input[type='submit'] {
