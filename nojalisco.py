@@ -90,7 +90,7 @@ def make_decision(weekday):
 class MainPage(webapp.RequestHandler):
     def get(self):
         path = os.path.join(os.path.dirname(__file__), 'index.html')
-        self.response.out.write(template.render(path, {}))
+        self.response.out.write(template.render(path, {'restaurant': make_decision(date.today().isoweekday())}))
 
     def post(self):
         path = os.path.join(os.path.dirname(__file__), 'index.html')
