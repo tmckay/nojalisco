@@ -24,18 +24,19 @@ LOCATIONS = {
     },
     'Buckley\'s': {
         'availability': (FRIDAY,)
+        'description': '?'
     },
     'Chipotle': {
         'availability': ALL_DAYS,
-        'description': 'the best restaurant known to mankind'
+        'description': 'The best restaurant known to mankind.'
     },
     'Subway': {
         'availability': ALL_DAYS,
-        'description': 'the secrets of sandwiches that have been past down for centuries, condensed and culminated into this restaurant'
+        'description': 'The secrets of sandwiches that have been passed down for centuries, condensed and culminated into this restaurant.'
     },
     'Curb Jumper': {
         'availability': (MONDAY, WEDNESDAY),
-        'description': "sliders, burgers and fries"
+        'description': "Sliders, burgers and fries."
     },
     'Marination': {
         'availability': (TUESDAY,),
@@ -47,15 +48,15 @@ LOCATIONS = {
     },
     'Barking Frog': {
         'availability': (TUESDAY, THURSDAY),
-        'description': 'I have no idea what they serve, really'
+        'description': 'I have no idea what they serve, really.'
     },
     'Sam Choy\'s Poke': {
         'availability': (WEDNESDAY,),
-        'description': 'Pokes!'
+        'description': 'Pokes! Delicous Yakitori bowls.'
     },
     'Plum': {
         'availability': (WEDNESDAY, FRIDAY),
-        'description': 'Vegetarian food!'
+        'description': 'Vegetarian food if you\'re into that kind of thing!'
     },
     'Off the Rez': {
         'availability': (THURSDAY,),
@@ -63,11 +64,35 @@ LOCATIONS = {
     },
     'Buns': {
         'availability': (FRIDAY,),
-        'description': 'Buns?'
+        'description': 'Exactly what it sounds like.'
     },
     'Nosh': {
         'availability': (FRIDAY,),
-        'description': 'good British food.'
+        'description': 'Good British food, fish and chips, mushy peas.'
+    }
+    'Ferry Noodle House': {
+        'availability': ALL_DAYS,
+        'description': 'Order online at http://www.ferrynoodlehouseseattle.com'
+    }
+    'Okinawa': {
+        'availability': ALL_DAYS,
+        'description': 'The most trusted teriyaki around.'
+    }
+    'Specialty\'s': {
+        'availability': ALL_DAYS,
+        'description': 'Precision crafted sandwiches.'
+    }
+    'Mel\'s': {
+        'availability': ALL_DAYS,
+        'description': 'A little bit farther than Specialty\'s'
+    }
+    'Melange': {
+        'availability': (WEDNESDAY,),
+        'description': 'Everybody\'s favorite chicken parm.'
+    }
+    'The Metropolitan Grill': {
+        'availability': (SATURDAY,SUNDAY,),
+        'description': 'You\'re working too hard! Treat yourself.'
     }
 }
 
