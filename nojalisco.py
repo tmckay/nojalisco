@@ -23,7 +23,7 @@ LOCATIONS = {
         'availability': ALL_DAYS
     },
     'Buckley\'s': {
-        'availability': (FRIDAY,)
+        'availability': (FRIDAY,),
         'description': '?'
     },
     'Chipotle': {
@@ -69,31 +69,31 @@ LOCATIONS = {
     'Nosh': {
         'availability': (FRIDAY,),
         'description': 'Good British food, fish and chips, mushy peas.'
-    }
+    },
     'Ferry Noodle House': {
         'availability': ALL_DAYS,
         'description': 'Order online at http://www.ferrynoodlehouseseattle.com'
-    }
+    },
     'Okinawa': {
         'availability': ALL_DAYS,
         'description': 'The most trusted teriyaki around.'
-    }
+    },
     'Specialty\'s': {
         'availability': ALL_DAYS,
         'description': 'Precision crafted sandwiches.'
-    }
+    },
     'Mel\'s': {
         'availability': ALL_DAYS,
         'description': 'A little bit farther than Specialty\'s'
-    }
+    },
     'Melange': {
         'availability': (WEDNESDAY,),
         'description': 'Everybody\'s favorite chicken parm.'
-    }
+    },
     'The Metropolitan Grill': {
         'availability': (SATURDAY,SUNDAY,),
         'description': 'You\'re working too hard! Treat yourself.'
-    }
+    },
 }
 
 
