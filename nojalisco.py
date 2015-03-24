@@ -14,17 +14,13 @@ SATURDAY = 6
 SUNDAY = 7
 ALL_DAYS = [x for x in range(8) if x != 0]
 
-#LOCATIONS = ['Taqueria Jalisco', 'CJ\'s Eatery', 'Rice \'n Spice', 'Barracuda Taqueria', 'Local 360', 'The Lucky Diner', 'Boat Street Cafe', 'The 5 Point Cafe', 'Buckley\'s in Belltown', 'Sushi Wave', 'Sushi Mori', 'Belltown Pub', 'Golden Singha Thai Cuisine', 'Uptown China Restaurant', 'Mama\'s Mexican Kitchen', 'Taco Del Mar']
-
-#LOCATIONS = ['Taqueria Jalisco (J/K)', 'CJ\'s Eatery', 'Rice \'n Spice', 'Local 360', 'The Lucky Diner', 'The 5 Point Cafe', 'Buckley\'s in Belltown', 'Sushi Wave', 'Sushi Mori', 'Belltown Pub', 'Golden Singha Thai Cuisine', 'Mama\'s Mexican Kitchen', 'Taco Del Mar']
-
 LOCATIONS = {
     'Taqueria Jalisco (J/K)': {
-        'availability': ALL_DAYS
+        'availability': ALL_DAYS,
     },
     'Buckley\'s': {
-        'availability': (FRIDAY,)
-        'description': '?'
+        'availability': (FRIDAY,),
+        'description': '?',
     },
     'Chipotle': {
         'availability': ALL_DAYS,
@@ -32,7 +28,9 @@ LOCATIONS = {
     },
     'Subway': {
         'availability': ALL_DAYS,
-        'description': 'The secrets of sandwiches that have been passed down for centuries, condensed and culminated into this restaurant.'
+        'description': 'The secrets of sandwiches that have been passed '
+                       'down for centuries, condensed and culminated into '
+                       'this restaurant.'
     },
     'Curb Jumper': {
         'availability': (MONDAY, WEDNESDAY),
@@ -69,31 +67,31 @@ LOCATIONS = {
     'Nosh': {
         'availability': (FRIDAY,),
         'description': 'Good British food, fish and chips, mushy peas.'
-    }
+    },
     'Ferry Noodle House': {
         'availability': ALL_DAYS,
         'description': 'Order online at http://www.ferrynoodlehouseseattle.com'
-    }
+    },
     'Okinawa': {
         'availability': ALL_DAYS,
         'description': 'The most trusted teriyaki around.'
-    }
+    },
     'Specialty\'s': {
         'availability': ALL_DAYS,
         'description': 'Precision crafted sandwiches.'
-    }
+    },
     'Mel\'s': {
         'availability': ALL_DAYS,
         'description': 'A little bit farther than Specialty\'s'
-    }
+    },
     'Melange': {
         'availability': (WEDNESDAY,),
         'description': 'Everybody\'s favorite chicken parm.'
-    }
+    },
     'The Metropolitan Grill': {
-        'availability': (SATURDAY,SUNDAY,),
+        'availability': (SATURDAY, SUNDAY,),
         'description': 'You\'re working too hard! Treat yourself.'
-    }
+    },
 }
 
 
@@ -113,13 +111,18 @@ def make_decision(weekday):
 
 
 class MainPage(webapp.RequestHandler):
-    def get(self):
+
+    def _show_random_restaurant(self):
         path = os.path.join(os.path.dirname(__file__), 'index.html')
-        self.response.out.write(template.render(path, {'restaurant': make_decision(date.today().isoweekday())}))
+        weekday = date.today().isoweekday()
+        self.response.out.write(template.render(path,
+                                {'restaurant': make_decision(weekday)}))
+
+    def get(self):
+        self._show_random_restaurant()
 
     def post(self):
-        path = os.path.join(os.path.dirname(__file__), 'index.html')
-        self.response.out.write(template.render(path, {'restaurant': make_decision(date.today().isoweekday())}))
+        self._show_random_restaurant()
 
 application = webapp.WSGIApplication(
                                      [
@@ -127,8 +130,10 @@ application = webapp.WSGIApplication(
                                      ],
                                      debug=True)
 
+
 def main():
     run_wsgi_app(application)
+
 
 if __name__ == "__main__":
     main()
