@@ -41,8 +41,8 @@ LOCATIONS = {
         'description': 'Hawaiin-Korean cuisine'
     },
     'Jemil\'s': {
-        'availability': (TUESDAY,),
-        'description': 'Cajun cooking, with ro-boys'
+        'availability': (THURSDAY,),
+        'description': 'Cajun cooking, with po-boys'
     },
     'Barking Frog': {
         'availability': (TUESDAY, THURSDAY),
